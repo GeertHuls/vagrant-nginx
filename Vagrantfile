@@ -9,4 +9,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "web-dev"
   
   config.vm.provision "shell", path: "provision.sh"
+  config.vm.network "forwarded_port", guest:80, host: 8081, id: "nginx"
 end
